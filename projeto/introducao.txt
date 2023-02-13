@@ -1,0 +1,168 @@
+FRAMEWORK: Conjunto de componentes: funções, api´s, classes que nos ajuda a desenvolver aplicativos ou
+softwares de uma forma mais rápida e fácil.
+
+DJANGO: É um Framework web, open source (código aberto), Baseado em python, gratuíto e de alto nível.
+Este framework foi criado com objetivo de resolver todos os problemas mais comuns dos processos de
+desenvolvimento  de aplicações web, como autenticação, rotas, orm(mapeamento de obejto relacional),
+e até as migrations.
+
+# Suas três mais importantes características são:
+#
+# → Velocidade
+#
+# → Segurança
+#
+# → Escalabilidade
+
+
+# → URL’s: Um mapeador de URL é usado para redirecionar solicitações HTTP para a visualização
+# apropriada com base na URL de solicitação.
+
+# → View: Uma view é uma função request handler, que recebe solicitações HTTP e retorna respostas HTTP.
+# As views acessam os dados necessários para satisfazer solicitações por meio de modelos e delegam a
+# formatação da resposta aos modelos.
+
+# → Models: Models são objetos Python que definem a estrutura dos dados de um aplicativo e fornecem
+# mecanismos para gerenciar (adicionar, modificar, excluir) e consultar registros no banco de dados.
+
+# → Templates: Um template é um arquivo de texto que define a estrutura ou o layout de um arquivo
+# (como uma página HTML), com espaços reservados para representar o conteúdo real. Uma view pode criar
+# dinamicamente uma página HTML usando um template HTML, preenchendo-a com dados de um modelo.
+
+# Uma das partes mais poderosas do Django é a interface de administração automática.
+# Ele lê os metadados de seus modelos para fornecer uma interface rápida e centrada no modelo,
+# na qual usuários confiáveis podem gerenciar o conteúdo do seu site.
+
+# 0 - criar uma pasta em um dirtetório específico cd C:\Users\Administrador\Documents\projetos_python
+# 1 - criando a pasta: mkdir projeto_django
+# 2 - entrando na pasta do projeto: cd blog_django
+# 3 - crie o ambiente virtual: python -m venv venv
+# 4 - Ative o ambiente virtual: venv\Scripts\activate
+# 5 - Instale o Django e a versão prentendida: pip install django==4.0.4
+# 6 - Execute o seguinte comando: django-admin startproject blog_django . com ponto no final
+# 7 - Entre na pasta  do Projeto: cd blog_django
+# 8 - Execute o seguinte comando: python manage.py runserver
+# 9 - vá em setttings.py
+
+
+# 12 - Chegou o momento de aplicarmos as migrações, mas antes disso, o que são elas?
+# As migrações são a maneira do Django de propagar alterações que você faz nos seus
+# models (adicionar um campo, excluir um modelo etc.)
+
+# Existem vários comandos que você usará para interagir com as migrações e o tratamento do Django
+# do esquema do banco de dados:
+
+# MIGRATE: responsável por aplicar e cancelar a aplicação de migrações.
+
+# MAKEMIGRATIONS: responsável por criar novas migrações com base nas alterações
+# que você fez em seus modelos.
+
+# SQLMIGRATE, que exibe as instruções SQL para uma migração.
+
+# SHOWMIGRATIONS, que lista as migrações de um projeto e seu status.
+
+# 13 - Para criar um banco de dados para o nosso blog: python manage.py migrate
+
+# Uma série de operações serão executadas e veremos muitos OK’s, significando que nossos models
+# foram migrados com sucesso, agora já podemos criar um super-usuário com poderes administrativos
+# para acessar o Django Admin back-end, para esta tarefa executaremos:
+
+# 14 - Para manter tudo arrumado, vamos criar uma aplicação separada dentro do nosso projeto:
+       python manage.py startapp blog
+
+# 15 - Depois de criar uma aplicação, também precisamos dizer ao Django que ele deve usá-la.
+Fazemos isso no arquivo settings.py
+
+# Nesse ponto é importante termos nosso projeto aberto em um editor de textos,
+# uma vez que nosso app blog foi criado, precisamos imediamente registrá-lo no
+# arquivo settings.py do nosso projeto, este arquivo guarda todas as configurações
+# de nossa aplicação, vamos editar a seguinte parte dele, de forma a cadastrarmos nosso app:
+
+# INSTALLED_APPS = [
+#     'django.contrib.admin',
+#     'django.contrib.auth',
+#     'django.contrib.contenttypes',
+#     'django.contrib.sessions',
+#     'django.contrib.messages',
+#     'django.contrib.staticfiles',
+#     'blog',
+# ]
+
+
+# 20 - Criando tabelas para nossos modelos no banco de dados. O último passo é adicionar nosso
+novo modelo ao banco de dados. com que o Django entenda que fizemos algumas alterações nos nossos modelos.
+(Acabamos de criar um modelo de Post!): python manage.py makemigrations blog
+
+# 21 - O Django preparou um arquivo de migração que precisamos aplicar ao nosso banco de dados.
+Digite python manage.py migrate blog
+
+
+# 22 - Para adicionar, editar e deletar os posts que acabamos de modelar, nós usaremos o admin do Django.
+Vamos abrir o arquivo: blog/admin.py no editor de código e substituir o conteúdo pelo seguinte:
+
+
+# 25 - OK, hora de olhar para o nosso modelo de Post. Lembre-se de executar python manage.py runserver no console
+para iniciar o servidor web. Vá para o seu navegador e digite o endereço http://127.0.0.1:8000/admin/.
+
+
+# 26 - Para fazer login, você precisa criar um superusuário (superuser) - uma conta de usuário
+que pode controlar tudo no site. Volte à linha de comando, digite:python manage.py createsuperuser e aperte Enter.
+
+# Escolha o nome do seu usuário, preencha seu endereço de email e escolha uma senha. Feito isso,
+# agora já possuímos um usuário capaz de acessar o painel administrativo do Django.
+# Você agora já pode navegar até o endereço http://127.0.0.1:8000/admin/ e fazer o login
+# com suas credenciais escolhidas, aproveite e divirta-se experimentando o painel Django.
+
+# Usuário: Ryan
+# e-mail: ramosaraujoryanantonio@hotmail.com
+# senha: 123
+
+# Você criou seu primeiro modelo em Django !
+
+
+
+# 27 - Começando o seu repositório no Git
+O Git controla as alterações em um determinado conjunto de arquivos no que chamamos de repositório
+de código (ou "repo"). Vamos criar um para o nosso projeto. Abra o seu console e execute esses comandos no diretório
+
+$ git init
+Initialized empty Git repository in ~/djangogirls/.git/
+$ git config --global user.name "Seu Nome"
+$ git config --global user.email voce@exemplo.com
+
+Só é necessário iniciar o repositório Git uma vez por projeto
+(e você não vai precisar preencher seu nome de usuário e e-mail nunca mais).
+
+
+# 28 - O Git irá controlar as alterações em todos os arquivos e pastas neste diretório,
+mas existem alguns arquivos que queremos que ele ignore. Fazemos isso através da criação de um arquivo chamado
+.gitignore no diretório base. Abra seu editor e crie um novo arquivo com o seguinte conteúdo:
+
+*.pyc
+*~
+__pycache__
+myvenv
+db.sqlite3
+/static
+.DS_Store
+
+29 - É uma boa idéia usar um comando git status antes de git add ou sempre que você não tiver certeza do
+que mudou. Isso evitará quaisquer surpresas, como os arquivos errados serem adicionados ou "commitados".
+saída do comando deve ser parecida com o seguinte:
+
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .gitignore
+        blog/
+        manage.py
+        mysite/
+        requirements.txt
+
+# 30 - E finalmente salvamos nossas alterações. Vá para o seu console e execute estes comandos:
+
+git add --all .

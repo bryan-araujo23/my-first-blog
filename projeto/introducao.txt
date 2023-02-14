@@ -164,5 +164,60 @@ Untracked files:
         requirements.txt
 
 # 30 - E finalmente salvamos nossas alterações. Vá para o seu console e execute estes comandos:
+1- git add --all .
+2- git commit -m "My django app, First commit"
 
-git add --all .
+
+# 31 - Subindo o seu código para o GitHub: Em seguida, crie um novo repositório chamado "my-first-blog".
+- Deixe a caixa "Initialize with a README" desmarcada.
+- deixe a opção do .gitignore em branco
+- deixe a licença como "None".
+- Aperte create repository.
+
+
+# 32 - Na próxima tela, você verá a URL de clonagem do seu repositório, que utilizará
+em alguns dos comandos a seguir:
+
+- deixe https selecionado.
+- Agora precisamos conectar o repositório Git no seu computador com o que existe no GitHub.
+
+
+# 33 - Digite o seguinte no seu terminal:
+       git remote add origin https://github.com/<your-github-username>/my-first-blog.git
+
+     - substitua <your-github-username> pelo nome de usuário que você escolheu quando criou sua conta no GitHub.
+       no meu caso ficou assim: git remote add origin https://github.com/bryan-araujo23/my-first-blog.git
+
+     - depois: git branch -M main
+     - depois: git push -u origin main
+
+# 34 - O que é uma URL?
+     - Uma URL é um endereço da web.
+     - Em Django, usamos algo chamado URLconf (configuração de URLs).
+     - URLconf é um conjunto de padrões que o Django vai usar para comparar
+     - com a URL recebida para encontrar a resposta correta.
+     - vá para urls.py
+
+# 37 - Crie um novo arquivo vazio chamado urls.py no diretório blog
+
+# 41 - Vá para blog/views
+
+# 43 - Introdução ao HTML
+     - o que é um template?
+     - Template é um arquivo que nós podemos reutilizar para apresentar diferentes
+     - informações em um formato especificado.
+     - Criar um template significa criar um arquivo de template
+     - Os templates são salvos no diretório blog/templates. Crie a pasta template dentro da pasta blog.
+
+
+# 44 - Crie uma pasta blog dentro da pasta templates
+
+# 45 - Crie um arquivo post_list.html dentro de: blog/templates/blog
+     - execute o servidor local: python manage.py runserver a página,
+     - deverá estar em branco, sem erros.
+
+# 46 - vá para blog/templates/blog/post_list.html
+
+# 48 - Assegure-se de que você está no diretório
+     - e vamos dizer ao git para incluir todas as mudanças feitas nele
+     - git add --all

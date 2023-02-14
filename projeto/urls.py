@@ -18,9 +18,21 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
+
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include                                           # 35 include
+
+
+# A URL do admin, que você visitou no capítulo anterior, já está aqui:
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('blog.urls'))                                               # 36
+
 ]
+
+
+# Isso significa que para cada URL que começa com admin/, o Django irá encontrar uma view correspondente.
+# É hora de criar nossa primeira URL! Queremos que http://127.0.0.1:8000 / seja a página inicial do nosso
+# blog e exiba uma lista de posts.
